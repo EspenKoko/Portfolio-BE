@@ -1,0 +1,91 @@
+# openapi: 3.0.0
+# info:
+#   title: My CV Backend API
+#   version: 1.0.0
+#   description: API documentation for the CV backend service
+# servers:
+#   - url: http://localhost:5000
+# paths:
+#   /users:
+#     get:
+#       summary: Get all users
+responses:
+  '200':
+    description: List of users
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+  # /users/{id}:
+  #   get:
+  #     summary: Get a user by ID
+  #     parameters:
+  #       - in: path
+  #         name: id
+  #         required: true
+  #         schema:
+  #           type: integer
+  #     responses:
+  #       '200':
+  #         description: User object
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/User'
+  #       '404':
+  #         description: User not found
+  # /users/create:
+  #   post:
+  #     summary: Create a new user
+  #     requestBody:
+  #       required: true
+  #       content:
+  #         application/json:
+  #           schema:
+  #             $ref: '#/components/schemas/UserCreate'
+  #     responses:
+  #       '201':
+  #         description: User created
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        user_id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        location:
+          type: string
+        summary:
+          type: string
+        profile_photo:
+          type: string
+    # UserCreate:
+    #   type: object
+    #   properties:
+    #     name:
+    #       type: string
+    #     email:
+    #       type: string
+    #     phone:
+    #       type: string
+    #     location:
+    #       type: string
+    #     summary:
+    #       type: string
+    #     profile_photo:
+    #       type: string
+    #   required:
+    #     - name
+    #     - email

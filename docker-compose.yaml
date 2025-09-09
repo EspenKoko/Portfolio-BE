@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  pg_db:
+    image: postgres:17
+    container_name: my-pg-cv-db
+    environment:
+      POSTGRES_DB: mycv
+      POSTGRES_USER: mycv
+      POSTGRES_PASSWORD: mycv
+    ports:
+      - "6543:5432"
+    volumes:
+      - ./app/migrations/dbInit.sql:/docker-entrypoint-initdb.d/dbInit.sql
+    # restart: unless-stopped
+    # healthcheck:
+    #   test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mycv} -d ${POSTGRES_DB:-mycv}"]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 5
