@@ -26,13 +26,16 @@ my_cv_backend/
 │   ├── routes/
 │   ├── schemas/
 │   ├── services/
-│   └── migrations/
+│   ├── migrations/
+│   │   └── dbInit.sql
+│   └── config.py
 ├── tests/
 ├── docs/
 ├── venv/
-├── config.py
-├── dbInit.sql TODO update the folder structure since db file moved
+├── .gitignore
+├── conftest.py
 ├── docker-compose.yaml
+├── LICENSE
 ├── requirements.txt
 ├── run.py
 ├── wsgi.py
@@ -124,11 +127,15 @@ ip addr show eth0
    ```bash
    pip install -r requirements.txt
    ```
-5. **Dummy data can be seed by running**
+5. **Create enviroments file**
+   ```bash
+   cp env_example .env2
+   ```
+6. **Dummy data can be seed by running**
    ```bash
    python -m app/migrations/seed.py
    ```
-6. **Run the application:**
+7. **Run the application:**
    ```bash
    python run.py [port]
    ```
@@ -141,12 +148,19 @@ ip addr show eth0
 
 ## API Endpoints
 - `/auth` - User authentication routes
-- `/cv` - CV management routes
-- `/actuator` - Health check and monitoring routes
-
-Refer to the code in `app/routes/` for detailed endpoint documentation.
-
-docs availble at `{URL}/apidocs`  TODO should I hard code the port
+- `/actuator` - Health check and monitoring rou
+- `/api/users` - User management
+- `/api/actuater` - Health check and monitoring
+- `/api/skills` - Skills
+- `/api/user_skills` - User skills
+- `/api/experience` - Experience
+- `/api/education` - Education
+- `/api/projects` - Projects
+- `/api/certificates` - Certificates
+- `/api/contact_messages` - Contact messages
+- `/api/technologies` - Technologies
+- `/api/project_technologies` - Project technologies
+- `/apidocs` - swagger docs
 
 ## Testing
 - Tests are located in the `tests/` directory.
@@ -154,11 +168,16 @@ docs availble at `{URL}/apidocs`  TODO should I hard code the port
   ```bash
   pytest tests/
   ```
+- To run quite tests:
+  ```bash
+  pytest -q tests/
+  ```
 
+TODO update licence copyright section
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the Apache License.
 
-# Questions
-which is better between relative and absolute imports
+# TASK
 TODO add rate limiting
-why does my path show app but link to the __init__.py file in my app
+TODO add control columns to db
+TODO add type 2 dimention tables

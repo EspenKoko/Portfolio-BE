@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ..schemas.contact_message_schema import ContactMessageSchema
-from ..models.contact_message import ContactMessage
+from app.schemas.contact_message_schema import ContactMessageSchema
+from app.models.contact_message import ContactMessage
 
 contact_messages_bp = Blueprint("contact_messages", __name__)
 contact_message_schema = ContactMessageSchema()

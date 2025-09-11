@@ -1,38 +1,21 @@
 from flask import Flask
-from flasgger import Swagger
-from .extensions import db, ma
-from .routes import register_routes
-
-"""
-Author          : Espen Koko
-Create Date     : 09-09-2025
-File            : __init__.py
-"""
+from docs.swagger import swagger_config
+from app.extensions import db, ma
+from app.routes import register_routes
+from app.utils.error_handlers import error_handlers
 
 def create_app():
     app = Flask(__name__)
     
-    template = {
-    "swagger": "3.0",
-    "info": {
-      "title": "Flask CV API",
-      "description": "This API was developed using Python Flask, which provides an interface for producing and consuming messages with Apache Kafka topics via HTTP endpoints.",
-      "version": "1.0"
-    }
-    }
-    app.config['SWAGGER'] = {
-        'title': 'Flask CV API',
-        'uiversion': 2,
-        # 'template': './resources/flasgger/swagger_ui.html'
-    }
-    Swagger(app, template=template)
+    swagger_config(app)
 
-    app.config.from_object("config.Config")
+    app.config.from_object("app.config.Config")
 
-    # Init extensions ????????
+    # TODO Init extensions ????
     db.init_app(app)
     ma.init_app(app)
 
     register_routes(app)
-
+    error_handlers(app)
+    
     return app

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ..schemas.education_schema import EducationSchema
-from ..models.education import Education
+from app.schemas.education_schema import EducationSchema
+from app.models.education import Education
 
 education_bp = Blueprint("education", __name__)
 education_schema = EducationSchema()

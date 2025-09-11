@@ -1,4 +1,4 @@
-from ..extensions import db
+from app.extensions import db
 
 class Skill(db.Model):
     __tablename__ = "skills"

@@ -1,5 +1,5 @@
-from ..extensions import ma
-from ..models.technology import Technology
+from app.extensions import ma
+from app.models.technology import Technology
 
 class TechnologySchema(ma.SQLAlchemySchema):
     class Meta:

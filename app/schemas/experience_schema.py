@@ -1,5 +1,5 @@
-from ..extensions import ma
-from ..models.experience import Experience
+from app.extensions import ma
+from app.models.experience import Experience
 
 class ExperienceSchema(ma.SQLAlchemySchema):
     class Meta:

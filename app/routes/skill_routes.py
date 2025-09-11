@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ..schemas.skill_schema import SkillSchema
-from ..models.skill import Skill
+from app.schemas.skill_schema import SkillSchema
+from app.models.skill import Skill
 
 skills_bp = Blueprint("skills", __name__)
 skill_schema = SkillSchema()
