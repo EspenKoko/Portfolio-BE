@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ..schemas.project_schema import ProjectSchema
-from ..models.project import Project
+from app.schemas.project_schema import ProjectSchema
+from app.models.project import Project
 
 projects_bp = Blueprint("projects", __name__)
 project_schema = ProjectSchema()

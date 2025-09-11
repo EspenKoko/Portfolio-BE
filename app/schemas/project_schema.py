@@ -1,5 +1,5 @@
-from ..extensions import ma
-from ..models.project import Project
+from app.extensions import ma
+from app.models.project import Project
 
 class ProjectSchema(ma.SQLAlchemySchema):
     class Meta:

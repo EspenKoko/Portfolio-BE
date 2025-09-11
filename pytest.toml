@@ -1,0 +1,7 @@
+# This file is used to configure pytest, such as setting default arguments,
+# defining markers, or customizing test discovery
+
+; [tool.pytest.ini_options]
+; pythonpath = [
+;   ".", "app",
+; ]

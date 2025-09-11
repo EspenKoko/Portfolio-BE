@@ -1,5 +1,5 @@
-from ..extensions import ma
-from ..models.education import Education
+from app.extensions import ma
+from app.models.education import Education
 
 class EducationSchema(ma.SQLAlchemySchema):
     class Meta:

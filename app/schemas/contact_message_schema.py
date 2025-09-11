@@ -1,5 +1,5 @@
-from ..extensions import ma
-from ..models.contact_message import ContactMessage
+from app.extensions import ma
+from app.models.contact_message import ContactMessage
 
 class ContactMessageSchema(ma.SQLAlchemySchema):
     class Meta:

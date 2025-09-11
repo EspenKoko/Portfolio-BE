@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ..schemas.experience_schema import ExperienceSchema
-from ..models.experience import Experience
+from app.schemas.experience_schema import ExperienceSchema
+from app.models.experience import Experience
 
 experience_bp = Blueprint("experience", __name__)
 experience_schema = ExperienceSchema()

@@ -1,5 +1,5 @@
-from ..extensions import ma
-from ..models.certificate import Certificate
+from app.extensions import ma
+from app.models.certificate import Certificate
 
 class CertificateSchema(ma.SQLAlchemySchema):
     class Meta:

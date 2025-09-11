@@ -1,5 +1,5 @@
-from ..extensions import ma
-from ..models.skill import Skill
+from app.extensions import ma
+from app.models.skill import Skill
 
 class SkillSchema(ma.SQLAlchemySchema):
     class Meta:

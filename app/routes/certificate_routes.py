@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ..schemas.certificate_schema import CertificateSchema
-from ..models.certificate import Certificate
+from app.schemas.certificate_schema import CertificateSchema
+from app.models.certificate import Certificate
 
 certificates_bp = Blueprint("certificates", __name__)
 certificate_schema = CertificateSchema()

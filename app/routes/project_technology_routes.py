@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from ..schemas.project_technology_schema import ProjectTechnologySchema
-from ..models.project_technology import ProjectTechnology
+from app.schemas.project_technology_schema import ProjectTechnologySchema
+from app.models.project_technology import ProjectTechnology
 
 project_technology_bp = Blueprint("project_technology", __name__)
 project_technology_schema = ProjectTechnologySchema()
